@@ -11,12 +11,16 @@ function onSearch(character) {
   fetch(`https://rickandmortyapi.com/api/character/${character}`)
       .then((response) => response.json())
       .then((data) => {
-        if (data.name) {
+        if (data.name && !characters.find((char)=>char.id === data.id)) {
             setCharacters((oldChars) => [...oldChars, data]);
         } else {
             window.alert('No hay personajes con ese ID');
         }
       });
+}
+
+const onClose=(id)=>{
+  setCharacters(characters.filter((char)=>char.id !== id));
 }
   return (
      
@@ -31,6 +35,7 @@ function onSearch(character) {
         <div>
           <Cards
             characters={characters}
+            onClose={onClose}
           />
         </div>
       </div>

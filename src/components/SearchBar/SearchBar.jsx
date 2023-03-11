@@ -22,6 +22,8 @@ const Boton= stiled.button`
  border-radius: 10px;
  background-color: #dfe;
  border: 0;
+ width: 10em;
+ height: 30px;
  `;
 export default function SearchBar(props) {
    const [char,setChar]=useState("");
