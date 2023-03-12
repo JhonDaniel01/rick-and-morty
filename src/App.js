@@ -2,8 +2,12 @@ import './App.css'
 import {useState} from "react" 
 import Cards from './components/Cards/Cards.jsx'
 import Nav from './components/Nav/Nav'
-//import characters from './data.js'
+import { Routes, Route } from "react-router-dom";  
 import imagen from './img/ra1.png'
+import About from './components/About/About'
+import Detail from './components/Detail/Detail'
+
+
 function App () {
   const [characters,setCharacters]=useState([]);
 
@@ -25,19 +29,21 @@ const onClose=(id)=>{
   return (
      
     <div className='App' style={{ padding: '25px' }}>
-      <div>
-        <Nav onSearch={onSearch}/>
-      </div>
-      <div>
-        <div>
+        <div className='contenedor'>
           <img className='imagen' src={imagen} alt=""/>
-        </div> 
-        <div>
-          <Cards
-            characters={characters}
-            onClose={onClose}
-          />
-        </div>
+       <div className='nav'>
+       <Nav onSearch={onSearch}/>
+       </div>
+       </div>
+
+      <div> 
+    
+    <Routes>
+      <Route path='/' element={<Cards characters={characters} onClose={onClose}/>} />
+      <Route path='/detail/:detailId' element={<Detail/>} />
+      <Route path='/about' element={<About/>} />
+    </Routes>
+    
       </div>
     </div>
   )
