@@ -24,6 +24,8 @@ export default function Detail(){
       }, [detailId]);
      console.log(character);
      return( <div className={style.container}>
+        { character.name ?(
+         <>
          <img className={style.image} src={character.image} alt="" />
          <div className={style.containerText}>
             <h2 className={style.text}>Name: {character.name}</h2>
@@ -31,7 +33,11 @@ export default function Detail(){
             <h2 className={style.text}>Gender: {character.gender}</h2>
             <h2 className={style.text}>Status: {character.status}</h2>
             <h2 className={style.text}>Origin: {character.origin?.name}</h2>
-            <button className={style.boton} onClick={()=>navigate("/")}>Inicio</button>
+            <button className={style.boton} onClick={()=>navigate("/home")}>Inicio</button>
          </div>
+         </>
+         
+          ):(<h3>Loading...</h3>)
+        }
       </div>);
 }

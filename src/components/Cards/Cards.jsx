@@ -6,6 +6,7 @@ export default function Cards(props) {
    return ( <div className={style.contenedorCard}>
       {characters.map(character=>{
           return <Card
+          key={character.id}
           id={character.id}
           name={character.name}
           species={character.species}
