@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Nav(props){
  
-  console.log(props.location);
-    if (props.location==="/")return<></>
-    else {
+  
     return(<>
       <SearchBar
           onSearch={props.onSearch}
@@ -13,5 +11,5 @@ export default function Nav(props){
         <Link to="/home"><button>Home</button></Link>
       <Link to="/about"><button>About</button></Link>
         
-    </>);}
+    </>);
 }

@@ -49,7 +49,7 @@ const onClose=(id)=>{
         <img className='imagen' src={imagen} alt=""/>
        
        <div className='nav'>
-       <Nav onSearch={onSearch} location={location.pathname}/>
+       {location.pathname==="/" ? <></> : <Nav onSearch={onSearch}/>}
        </div>
        </div>
 
