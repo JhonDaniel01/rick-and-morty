@@ -8,7 +8,7 @@ export default function Detail(){
     const { detailId } = useParams();
     const navigate = useNavigate();
     useEffect(() => {
-        fetch(`https://rickandmortyapi.com/api/character/${detailId}`)
+        fetch(`http://localhost:3001/detail/${detailId}`)
           .then((response) => response.json())
           .then((char) => {
             if (char.name) {
@@ -22,7 +22,7 @@ export default function Detail(){
           });
         //return setCharacter({});
       }, [detailId]);
-     console.log(character);
+     console.log("Detalle: ",character);
      return( <div className={style.container}>
         { character.name ?(
          <>
