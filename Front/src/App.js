@@ -7,6 +7,7 @@ import imagen from './img/ra1.png'
 import About from './components/About/About'
 import Detail from './components/Detail/Detail'
 import Form from './components/Form/Form';
+import Favs from './components/Favs/favs'
 
 
 function App () {
@@ -60,6 +61,7 @@ const onClose=(id)=>{
       <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>} />
       <Route path='/detail/:detailId' element={<Detail/>} />
       <Route path='/about' element={<About/>} />
+      <Route path='/fav' element={<Favs/>} />
     </Routes>
     
       </div>
