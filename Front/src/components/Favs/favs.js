@@ -9,7 +9,7 @@ export default function Favs(props) {
    const dispatch = useDispatch();
    
    useEffect(() => {
-      dispatch(getCharacters());
+      //dispatch(getCharacters());
     }, []);
 
    return ( <div className={style.contenedorCard}>

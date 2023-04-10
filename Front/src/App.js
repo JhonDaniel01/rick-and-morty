@@ -61,7 +61,7 @@ const onClose=(id)=>{
       <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>} />
       <Route path='/detail/:detailId' element={<Detail/>} />
       <Route path='/about' element={<About/>} />
-      <Route path='/fav' element={<Favs/>} />
+      {/* <Route path='/fav' element={<Favs/>} /> */}
     </Routes>
     
       </div>
